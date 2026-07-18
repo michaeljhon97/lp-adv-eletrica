@@ -3,246 +3,505 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portão Eletrônico — ADV Elétrica | Instalação e Manutenção em Campinas</title>
-  <meta name="description" content="Instalação, manutenção e troca de motor de portão eletrônico em Campinas e região. ADV Elétrica — soluções em energia com mais de 10 anos de experiência." />
-  <meta name="author" content="ADV Soluções em Energia" />
-  <meta property="og:title" content="Portão Eletrônico — ADV Elétrica" />
-  <meta property="og:description" content="Instalação, manutenção e troca de motor de portão eletrônico em Campinas." />
+  <title>ADV Elétrica — Portões e Carregadores Veiculares</title>
+  <meta name="description" content="Instalação e manutenção de portões eletrônicos e carregadores para veículos elétricos em toda a região. Orçamento rápido pelo WhatsApp." />
+  <meta name="author" content="ADV Elétrica" />
+  <meta property="og:title" content="ADV Elétrica — Soluções em Energia" />
+  <meta property="og:description" content="Portões eletrônicos, CFTV e carregadores veiculares. Orçamento em minutos." />
   <meta property="og:type" content="website" />
-  <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="public/favicon.ico" type="image/x-icon" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" />
-  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#ffffff',
+            foreground: '#2e2518',
+            card: '#ffffff',
+            'card-foreground': '#2e2518',
+            primary: '#d4723c',
+            'primary-foreground': '#ffffff',
+            secondary: '#faf6f0',
+            'secondary-foreground': '#2e2518',
+            muted: '#faf6f0',
+            'muted-foreground': '#7a6e60',
+            accent: '#e8b84b',
+            'accent-foreground': '#2e2518',
+            border: '#e8e0d4',
+            input: '#e8e0d4',
+            ring: '#d4723c',
+            ember: '#d4723c',
+            bolt: '#e8b84b',
+            cream: '#faf6f0',
+            whatsapp: '#25d366',
+          },
+          fontFamily: {
+            display: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+          borderRadius: {
+            xl: 'calc(0.75rem + 4px)',
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    :root {
+      --ember: #d4723c;
+      --bolt: #e8b84b;
+      --cream: #faf6f0;
+      --whatsapp: #25d366;
+      --gradient-brand: linear-gradient(135deg, #d4723c 0%, #e8b84b 100%);
+      --shadow-ember: 0 20px 40px -20px rgba(212, 114, 60, 0.35);
+    }
+
+    html { scroll-behavior: smooth; }
+    * { border-color: #e8e0d4; }
+
+    body {
+      background-color: #ffffff;
+      color: #2e2518;
+      font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+      background-image:
+        radial-gradient(ellipse 60% 50% at 0% 0%, rgba(212, 114, 60, 0.08), transparent 60%),
+        radial-gradient(ellipse 60% 50% at 100% 100%, rgba(232, 184, 75, 0.08), transparent 60%);
+      background-attachment: fixed;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    .text-gradient {
+      background: var(--gradient-brand);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .bg-gradient-brand {
+      background: var(--gradient-brand);
+    }
+
+    .grid-lines {
+      background-image:
+        linear-gradient(to right, rgba(212, 114, 60, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(212, 114, 60, 0.08) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    .section-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--ember);
+      font-weight: 600;
+    }
+
+    .h-display {
+      font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 700;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+    }
+    .pulse-dot {
+      animation: pulse-dot 1.8s ease-in-out infinite;
+    }
+
+    .service-card:hover .service-bar {
+      width: 100%;
+    }
+    .service-card:hover .service-icon {
+      background: var(--gradient-brand);
+      border-color: transparent;
+    }
+    .service-card:hover .service-icon svg {
+      color: white;
+    }
+    .service-card:hover .service-img {
+      transform: scale(1.05);
+    }
+
+    [x-cloak] { display: none !important; }
+  </style>
 </head>
-<body>
+<body class="min-h-screen">
 
   <!-- HEADER -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="../" class="header-brand">
-        <img src="../img/logo-adv.png" alt="ADV Elétrica — Soluções em Energia" width="48" height="48" class="header-logo" />
-        <div class="header-brand-text">
-          <div class="header-brand-name">ADV ELÉTRICA</div>
-          <div class="header-brand-sub">Soluções em Energia</div>
+  <header class="sticky top-0 z-40 border-b border-border/60 backdrop-blur-xl bg-white/75">
+    <div class="mx-auto max-w-6xl px-5 h-16 flex items-center gap-4">
+      <a href="#top" class="flex items-center gap-2.5 min-w-0">
+        <div class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white overflow-hidden">
+          <img src="assets/logo-adv.png" alt="ADV Elétrica" class="h-10 w-10 object-contain" />
+        </div>
+        <div class="min-w-0 leading-tight">
+          <div class="font-display font-bold text-sm tracking-tight truncate">ADV ELÉTRICA</div>
+          <div class="text-[10px] uppercase tracking-[0.2em] text-muted-foreground truncate">Soluções em Energia</div>
         </div>
       </a>
-      <nav class="header-nav">
-        <a href="#servicos">Serviços</a>
-        <a href="#por-que">Por que escolher</a>
-        <a href="#contato">Contato</a>
+      <nav class="hidden md:flex items-center gap-7 mx-auto text-sm font-medium text-foreground/80">
+        <a href="#servicos" class="hover:text-ember transition-colors">Serviços</a>
+        <a href="#porque" class="hover:text-ember transition-colors">Por que escolher</a>
+        <a href="#avaliacoes" class="hover:text-ember transition-colors">Avaliações</a>
+        <a href="#contato" class="hover:text-ember transition-colors">Contato</a>
       </nav>
-      <a href="https://wa.me/5519993459229?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%3A%20Port%C3%A3o%20Eletr%C3%B4nico." target="_blank" rel="noreferrer" class="header-cta">
-        <i data-lucide="message-circle"></i> Orçamento
+      <a href="https://wa.me/5519993459229?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noreferrer"
+         class="hidden md:inline-flex items-center gap-2 rounded-full bg-gradient-brand px-5 py-2 text-sm font-semibold text-white shadow-[var(--shadow-ember)] hover:brightness-110 transition">
+        Orçamento
+        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
       </a>
     </div>
   </header>
 
   <!-- HERO -->
-  <section id="top" class="hero">
-    <div class="hero-grid-lines" aria-hidden="true"></div>
-    <div class="hero-inner" style="grid-template-columns:1fr;text-align:center;max-width:56rem;">
-      <div class="hero-content" style="align-items:center;">
-        <span class="hero-badge">
-          <span class="pulse-dot"></span> Especialistas em Portões Eletrônicos
+  <section id="top" class="relative overflow-hidden">
+    <div class="absolute inset-0 grid-lines opacity-70 pointer-events-none"></div>
+    <div class="relative mx-auto max-w-5xl px-5 pt-20 pb-24 text-center">
+      <div class="inline-flex items-center gap-2 rounded-full border border-border bg-white/70 backdrop-blur px-4 py-1.5 text-xs font-medium">
+        <span class="relative flex h-2 w-2">
+          <span class="absolute inline-flex h-full w-full rounded-full bg-ember pulse-dot"></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-ember"></span>
         </span>
-        <h1 class="hero-title" style="font-size:clamp(2.5rem,6vw,4.5rem);">
-          <span class="gradient-text">Portão eletrônico</span><br />funcionando sempre.
-        </h1>
-        <p class="hero-desc" style="margin-left:auto;margin-right:auto;">
-          Instalação, troca de motor e manutenção corretiva para portões de correr, basculantes e pivotantes.
-          <strong>Atendimento rápido</strong> em Campinas e região — com garantia.
-        </p>
-        <div class="hero-buttons" style="justify-content:center;">
-          <a href="https://wa.me/5519993459229?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%3A%20Port%C3%A3o%20Eletr%C3%B4nico." target="_blank" rel="noreferrer" class="btn btn-primary">
-            <i data-lucide="message-circle"></i>
-            Peça um Orçamento
-            <i data-lucide="arrow-right" class="icon-sm"></i>
-          </a>
-          <a href="tel:+5519993459229" class="btn btn-outline">
-            <i data-lucide="phone" class="text-ember"></i>
-            Ligue Agora
-          </a>
+        Especialistas em automação e energia
+      </div>
+
+      <h1 class="h-display mt-6">
+        Portões e <span class="text-gradient">Carregadores</span> para sua casa ou empresa
+      </h1>
+
+      <p class="mt-6 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground leading-relaxed">
+        A <strong class="text-foreground">ADV Elétrica</strong> instala e mantém sistemas de
+        <strong class="text-foreground">portões automáticos</strong> e
+        <strong class="text-foreground">carregadores para veículos elétricos</strong> com atendimento
+        rápido e garantia de serviço.
+      </p>
+
+      <div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="https://wa.me/5519993459229?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noreferrer"
+           class="inline-flex items-center gap-2.5 rounded-full bg-gradient-brand px-7 py-3.5 text-sm font-semibold text-white shadow-[var(--shadow-ember)] hover:brightness-110 transition w-full sm:w-auto justify-center">
+          <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+          Peça um Orçamento
+          <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a href="tel:+5519993459229"
+           class="inline-flex items-center gap-2.5 rounded-full border border-border bg-white px-7 py-3.5 text-sm font-semibold hover:border-ember transition w-full sm:w-auto justify-center">
+          <svg class="h-5 w-5 text-ember" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          Ligue Agora
+        </a>
+      </div>
+
+      <div class="mt-14 grid grid-cols-3 gap-6 max-w-2xl mx-auto">
+        <div class="text-center">
+          <div class="text-gradient font-display font-bold text-3xl md:text-4xl">24h</div>
+          <div class="mt-1 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Atendimento</div>
         </div>
-        <div class="hero-stats" style="justify-content:center;max-width:36rem;">
-          <div class="stat">
-            <div class="stat-kpi gradient-text">24h</div>
-            <div class="stat-label">atendimento emergencial</div>
-          </div>
-          <div class="stat">
-            <div class="stat-kpi gradient-text">100%</div>
-            <div class="stat-label">serviço com garantia</div>
-          </div>
-          <div class="stat">
-            <div class="stat-kpi gradient-text">10+</div>
-            <div class="stat-label">anos de experiência</div>
-          </div>
+        <div class="text-center">
+          <div class="text-gradient font-display font-bold text-3xl md:text-4xl">100%</div>
+          <div class="mt-1 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Garantia</div>
+        </div>
+        <div class="text-center">
+          <div class="text-gradient font-display font-bold text-3xl md:text-4xl">10+</div>
+          <div class="mt-1 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Anos de experiência</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SERVIÇOS -->
-  <section id="servicos" class="container section-py">
-    <div class="section-center">
-      <span class="section-tag">Nossos Serviços</span>
-      <h2 class="section-title">
-        Soluções completas para seu <span class="gradient-text">portão eletrônico</span>.
-      </h2>
-      <p class="section-subtitle">Do diagnóstico à instalação — tudo com garantia e profissionalismo.</p>
-    </div>
+  <section id="servicos" class="bg-white py-24">
+    <div class="mx-auto max-w-6xl px-5">
+      <div class="text-center max-w-2xl mx-auto">
+        <div class="section-tag">Nossos serviços</div>
+        <h2 class="mt-3 font-display font-bold text-3xl md:text-4xl">
+          Soluções completas em <span class="text-gradient">automação e energia</span>
+        </h2>
+        <p class="mt-4 text-muted-foreground">
+          Clique em um serviço para receber um orçamento personalizado pelo WhatsApp.
+        </p>
+      </div>
 
-    <div class="services-grid" style="margin-top:3rem;max-width:48rem;margin-left:auto;margin-right:auto;">
-      <div class="service-card">
-        <div class="service-card-icon"><i data-lucide="settings"></i></div>
-        <h3 class="service-card-title">Instalação de Portões</h3>
-        <p class="service-card-desc">Instalação completa de portões eletrônicos de correr, basculantes e pivotantes com motor e controle remoto.</p>
-        <div class="service-card-line"></div>
-      </div>
-      <div class="service-card">
-        <div class="service-card-icon"><i data-lucide="wrench"></i></div>
-        <h3 class="service-card-title">Troca de Motor</h3>
-        <p class="service-card-desc">Substituição de motors danificados ou desatualizados por equipamentos de alta durabilidade e eficiência.</p>
-        <div class="service-card-line"></div>
-      </div>
-      <div class="service-card">
-        <div class="service-card-icon"><i data-lucide="screwdriver"></i></div>
-        <h3 class="service-card-title">Manutenção Corretiva</h3>
-        <p class="service-card-desc">Diagnóstico e reparo de falhas elétricas e mecânicas no menor tempo possível.</p>
-        <div class="service-card-line"></div>
-      </div>
-      <div class="service-card">
-        <div class="service-card-icon"><i data-lucide="shield-check"></i></div>
-        <h3 class="service-card-title">Manutenção Preventiva</h3>
-        <p class="service-card-desc">Revisão periódica para evitar paradas inesperadas e prolongar a vida útil do equipamento.</p>
-        <div class="service-card-line"></div>
-      </div>
-      <div class="service-card">
-        <div class="service-card-icon"><i data-lucide="radio"></i></div>
-        <h3 class="service-card-title">Controle Remoto e Acesso</h3>
-        <p class="service-card-desc">Programação, substituição e configuração de controles remotos, keypads e sensores.</p>
-        <div class="service-card-line"></div>
-      </div>
-      <div class="service-card">
-        <div class="service-card-icon"><i data-lucide="battery-charging"></i></div>
-        <h3 class="service-card-title">Bateria de Backup</h3>
-        <p class="service-card-desc">Instalação de baterias para seu portão funcionar mesmo durante quedas de energia.</p>
-        <div class="service-card-line"></div>
+      <div class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-5 max-w-5xl mx-auto" id="services-grid">
+        <!-- Portão Deslizante -->
+        <button onclick="scrollToContact('portao-deslizante')"
+                class="service-card group relative text-left overflow-hidden rounded-[19px] border border-border bg-white p-6 transition-all hover:-translate-y-1 hover:border-ember/60 hover:shadow-[var(--shadow-ember)]">
+          <div class="mb-4 -mx-6 -mt-6 h-36 overflow-hidden">
+            <img src="assets/portao_deslizante.png" alt="Portão Deslizante" class="service-img h-full w-full object-cover transition-transform duration-500" loading="lazy" />
+          </div>
+          <div class="service-icon grid h-11 w-11 place-items-center rounded-lg bg-ember/10 border border-ember/10 transition-all">
+            <svg class="h-5 w-5 text-ember transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14"/><path d="M2 20h20"/><path d="M14 12v.01"/></svg>
+          </div>
+          <h3 class="mt-4 font-display font-bold text-lg">Portão Deslizante</h3>
+          <p class="mt-1.5 text-sm text-muted-foreground">Motores robustos para portões deslizantes residenciais e comerciais.</p>
+          <div class="service-bar mt-4 h-[2px] w-0 rounded-full bg-gradient-brand transition-all duration-500"></div>
+        </button>
+
+        <!-- Portão Basculante -->
+        <button onclick="scrollToContact('portao-basculante')"
+                class="service-card group relative text-left overflow-hidden rounded-[19px] border border-border bg-white p-6 transition-all hover:-translate-y-1 hover:border-ember/60 hover:shadow-[var(--shadow-ember)]">
+          <div class="mb-4 -mx-6 -mt-6 h-36 overflow-hidden">
+            <img src="assets/portao_basculante.png" alt="Portão Basculante" class="service-img h-full w-full object-cover transition-transform duration-500" loading="lazy" />
+          </div>
+          <div class="service-icon grid h-11 w-11 place-items-center rounded-lg bg-ember/10 border border-ember/10 transition-all">
+            <svg class="h-5 w-5 text-ember transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3 class="mt-4 font-display font-bold text-lg">Portão Basculante</h3>
+          <p class="mt-1.5 text-sm text-muted-foreground">Instalação e automação de basculantes com alta segurança.</p>
+          <div class="service-bar mt-4 h-[2px] w-0 rounded-full bg-gradient-brand transition-all duration-500"></div>
+        </button>
+
+        <!-- Portão Pivotante -->
+        <button onclick="scrollToContact('portao-pivotante')"
+                class="service-card group relative text-left overflow-hidden rounded-[19px] border border-border bg-white p-6 transition-all hover:-translate-y-1 hover:border-ember/60 hover:shadow-[var(--shadow-ember)]">
+          <div class="mb-4 -mx-6 -mt-6 h-36 overflow-hidden">
+            <img src="assets/portao_pivotante.png" alt="Portão Pivotante" class="service-img h-full w-full object-cover transition-transform duration-500" loading="lazy" />
+          </div>
+          <div class="service-icon grid h-11 w-11 place-items-center rounded-lg bg-ember/10 border border-ember/10 transition-all">
+            <svg class="h-5 w-5 text-ember transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14"/><path d="M2 20h20"/><path d="M14 12v.01"/></svg>
+          </div>
+          <h3 class="mt-4 font-display font-bold text-lg">Portão Pivotante</h3>
+          <p class="mt-1.5 text-sm text-muted-foreground">Pivotantes com abertura suave e acabamento impecável.</p>
+          <div class="service-bar mt-4 h-[2px] w-0 rounded-full bg-gradient-brand transition-all duration-500"></div>
+        </button>
+
+        <!-- Motores PPA -->
+        <button onclick="scrollToContact('motor-ppa')"
+                class="service-card group relative text-left overflow-hidden rounded-[19px] border border-border bg-white p-6 transition-all hover:-translate-y-1 hover:border-ember/60 hover:shadow-[var(--shadow-ember)]">
+          <div class="mb-4 -mx-6 -mt-6 h-36 overflow-hidden">
+            <img src="assets/motores_ppa.png" alt="Motores PPA" class="service-img h-full w-full object-cover transition-transform duration-500" loading="lazy" />
+          </div>
+          <div class="service-icon grid h-11 w-11 place-items-center rounded-lg bg-ember/10 border border-ember/10 transition-all">
+            <svg class="h-5 w-5 text-ember transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/></svg>
+          </div>
+          <h3 class="mt-4 font-display font-bold text-lg">Motores PPA</h3>
+          <p class="mt-1.5 text-sm text-muted-foreground">Linha PPA completa: conforto, tecnologia e eficiência.</p>
+          <div class="service-bar mt-4 h-[2px] w-0 rounded-full bg-gradient-brand transition-all duration-500"></div>
+        </button>
+
+        <!-- Carregador Veicular -->
+        <button onclick="scrollToContact('carregador-ve')"
+                class="service-card group relative text-left overflow-hidden rounded-[19px] border border-border bg-white p-6 transition-all hover:-translate-y-1 hover:border-ember/60 hover:shadow-[var(--shadow-ember)]">
+          <div class="mb-4 -mx-6 -mt-6 h-36 overflow-hidden">
+            <img src="assets/carregador_energia_veicular.jpeg" alt="Carregador Veicular" class="service-img h-full w-full object-cover transition-transform duration-500" loading="lazy" />
+          </div>
+          <div class="service-icon grid h-11 w-11 place-items-center rounded-lg bg-ember/10 border border-ember/10 transition-all">
+            <svg class="h-5 w-5 text-ember transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C1.4 11.3 1 12.2 1 13v3c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+          </div>
+          <h3 class="mt-4 font-display font-bold text-lg">Carregador Veicular</h3>
+          <p class="mt-1.5 text-sm text-muted-foreground">Instalação de carregadores para carros elétricos (wallbox).</p>
+          <div class="service-bar mt-4 h-[2px] w-0 rounded-full bg-gradient-brand transition-all duration-500"></div>
+        </button>
       </div>
     </div>
   </section>
 
   <!-- POR QUE ESCOLHER -->
-  <section id="por-que" class="section-cream">
-    <div class="container sobre-grid" style="padding:5rem 0;">
+  <section id="porque" class="bg-cream py-24">
+    <div class="mx-auto max-w-6xl px-5 grid md:grid-cols-2 gap-12 items-start">
       <div>
-        <span class="section-tag">Por que escolher a ADV</span>
-        <h2 class="section-title">
-          Seu portão eletrônico em <span class="gradient-text">boas mãos</span>.
+        <div class="section-tag">Por que escolher</div>
+        <h2 class="mt-3 font-display font-bold text-3xl md:text-5xl leading-[1.05]">
+          Técnica, <span class="text-gradient">segurança</span> e atendimento que faz diferença
         </h2>
       </div>
-      <div class="sobre-text">
-        <p>
-          Com mais de <strong>10 anos de experiência</strong> em soluções elétricas,
-          a ADV Elétrica é referência em <strong>instalação e manutenção de portões eletrônicos</strong> em Campinas.
+      <div>
+        <p class="text-muted-foreground leading-relaxed">
+          Somos uma equipe especializada em <strong class="text-foreground">instalações elétricas
+          residenciais e comerciais</strong>, com foco em automação de portões e
+          infraestrutura para <strong class="text-foreground">carregamento de veículos elétricos</strong>.
+          Trabalhamos com as melhores marcas do mercado e oferecemos garantia total no serviço.
         </p>
-        <p>
-          Trabalhamos com as melhores marcas do mercado, oferecemos laudo técnico em cada serviço
-          e garantia de que o seu portão vai funcionar com segurança e eficiência.
-        </p>
-        <div class="badge-row">
-          <span class="badge"><i data-lucide="shield-check"></i> Garantia de serviço</span>
-          <span class="badge"><i data-lucide="clock"></i> Atendimento rápido</span>
-          <span class="badge"><i data-lucide="award"></i> Profissionais certificados</span>
-          <span class="badge"><i data-lucide="zap"></i> Emergência 24h</span>
+        <div class="mt-6 flex flex-wrap gap-2.5">
+          <!-- Garantia total -->
+          <div class="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-sm font-medium">
+            <svg class="h-4 w-4 text-ember" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+            Garantia total
+          </div>
+          <!-- Atendimento rápido -->
+          <div class="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-sm font-medium">
+            <svg class="h-4 w-4 text-ember" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Atendimento rápido
+          </div>
+          <!-- Marcas top -->
+          <div class="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-sm font-medium">
+            <svg class="h-4 w-4 text-ember" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+            Marcas top de linha
+          </div>
+          <!-- Equipe certificada -->
+          <div class="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-sm font-medium">
+            <svg class="h-4 w-4 text-ember" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/></svg>
+            Equipe certificada
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTATO -->
-  <section id="contato" class="container section-py">
-    <div class="section-center">
-      <span class="section-tag">Contato</span>
-      <h2 class="section-title">
-        Precisa de um <span class="gradient-text">orçamento</span>?
-      </h2>
-      <p class="section-subtitle">Fale conosco pelo WhatsApp ou telefone. Resposta em minutos.</p>
+  <!-- AVALIAÇÕES -->
+  <section id="avaliacoes" class="bg-cream py-24">
+    <div class="mx-auto max-w-6xl px-5">
+      <div class="text-center max-w-2xl mx-auto">
+        <div class="section-tag">Avaliações</div>
+        <h2 class="mt-3 font-display font-bold text-3xl md:text-4xl">
+          O que nossos clientes <span class="text-gradient">dizem</span>
+        </h2>
+        <p class="mt-4 text-muted-foreground">
+          Confira as avaliações reais de quem já contratou nossos serviços.
+        </p>
+      </div>
+      <div class="mt-12">
+        <div class="elfsight-app-d1f25b32-f567-4da6-9df6-2ce21ba4d30b" data-elfsight-app-lazy></div>
+      </div>
     </div>
-    <div style="max-width:32rem;margin:2.5rem auto 0;display:flex;flex-direction:column;gap:1rem;">
-      <a href="https://wa.me/5519993459229?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%3A%20Port%C3%A3o%20Eletr%C3%B4nico." target="_blank" rel="noreferrer" class="btn btn-primary btn-full" style="padding:1rem;">
-        <i data-lucide="message-circle"></i>
-        Orçamento via WhatsApp
-        <i data-lucide="arrow-right" class="icon-sm"></i>
-      </a>
-      <a href="tel:+5519993459229" class="btn btn-outline btn-full" style="padding:1rem;">
-        <i data-lucide="phone" class="text-ember"></i> Ligar agora
-      </a>
-      <div class="quote-note">
-        <strong>Resposta rápida:</strong> respondemos em minutos no horário comercial. Emergências 24h.
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="bg-white py-24">
+    <div class="mx-auto max-w-2xl px-5 text-center">
+      <div class="section-tag">Fale conosco</div>
+      <h2 class="mt-3 font-display font-bold text-3xl md:text-4xl">
+        Solicite seu <span class="text-gradient">orçamento</span>
+      </h2>
+      <p class="mt-4 text-muted-foreground">
+        Escolha o serviço desejado e envie sua mensagem — respondemos em minutos.
+      </p>
+
+      <div class="mt-8 text-left">
+        <label class="text-xs uppercase tracking-[0.2em] text-muted-foreground font-semibold">Serviço</label>
+        <select id="service-select" onchange="updateService()"
+                class="mt-2 w-full rounded-xl border border-border bg-white px-4 py-3 font-medium focus:outline-none focus:border-ember focus:ring-2 focus:ring-ember/20 transition">
+          <option value="portao-deslizante">Portão Deslizante</option>
+          <option value="portao-basculante">Portão Basculante</option>
+          <option value="portao-pivotante">Portão Pivotante</option>
+          <option value="motor-ppa">Motores PPA</option>
+          <option value="carregador-ve">Carregador Veicular</option>
+        </select>
+      </div>
+
+      <div class="mt-6 flex flex-col gap-3">
+        <a id="wa-link" href="https://wa.me/5519993459229?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%3A%20Port%C3%A3o%20Deslizante."
+           target="_blank" rel="noreferrer"
+           class="inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-brand px-7 py-3.5 text-sm font-semibold text-white shadow-[var(--shadow-ember)] hover:brightness-110 transition">
+          <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+          <span id="wa-text">WhatsApp — Portão Deslizante</span>
+        </a>
+        <a href="tel:+5519993459229"
+           class="inline-flex items-center justify-center gap-2.5 rounded-full border border-border bg-white px-7 py-3.5 text-sm font-semibold hover:border-ember transition">
+          <svg class="h-5 w-5 text-ember" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          Ligar — +55 (19) 99345-9229
+        </a>
+      </div>
+
+      <div class="mt-6 rounded-xl border border-border bg-cream px-5 py-4 text-sm text-muted-foreground">
+        <strong class="text-foreground">Resposta rápida:</strong> respondemos em minutos no horário comercial.
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="../img/logo-adv.png" alt="ADV Elétrica" class="footer-logo" />
-        <span class="footer-copy">© 2026 ADV Soluções em Energia — Campinas/SP</span>
+  <footer class="border-t border-border bg-white">
+    <div class="mx-auto max-w-6xl px-5 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+      <div class="flex items-center gap-2.5">
+        <img src="assets/logo-adv.png" alt="ADV Elétrica" class="h-8 w-8 object-contain" />
+        <span class="text-muted-foreground">&copy; <span id="year"></span> ADV Elétrica. Todos os direitos reservados.</span>
       </div>
-      <div class="footer-credit">
-        Desenvolvido por <a href="https://mjsites.com.br/" target="_blank" rel="noreferrer">MJSITES</a>
-      </div>
+      <a href="https://mjsites.com.br" target="_blank" rel="noreferrer"
+         class="text-muted-foreground hover:text-ember transition">
+        Desenvolvido por <strong class="text-foreground">MJSITES</strong>
+      </a>
     </div>
   </footer>
 
   <!-- FLOATING WHATSAPP -->
-  <a href="https://wa.me/5519993459229?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%3A%20Port%C3%A3o%20Eletr%C3%B4nico." target="_blank" rel="noreferrer" aria-label="Fale no WhatsApp" class="fab-whatsapp">
-    <i data-lucide="message-circle"></i>
+  <a href="https://wa.me/5519993459229?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento."
+     target="_blank" rel="noreferrer" aria-label="Fale no WhatsApp"
+     class="fixed bottom-6 right-6 z-50 grid h-14 w-14 place-items-center rounded-full bg-whatsapp text-white shadow-xl ring-4 ring-white transition hover:scale-110">
+    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
   </a>
 
-  <!-- COOKIE CONSENT -->
-  <div id="cookieBanner" class="cookie-banner" style="display:none;">
-    <div class="cookie-inner">
-      <div class="cookie-icon">
-        <i data-lucide="lock"></i>
+  <!-- COOKIE BANNER -->
+  <div id="cookie-banner" class="fixed bottom-4 left-4 right-4 md:left-6 md:right-auto md:max-w-md z-50 rounded-2xl border border-border bg-white/90 backdrop-blur-xl p-4 shadow-2xl" style="display:none;">
+    <div class="flex items-start gap-3">
+      <div class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-gradient-brand">
+        <svg class="h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
       </div>
-      <div class="cookie-text">
-        <strong>Sua privacidade é levada a sério.</strong>
-        Usamos cookies e tratamos seus dados conforme a LGPD (Lei nº 13.709/2018) apenas
-        para melhorar sua experiência e responder seu contato. Solicitações:
-        <a href="mailto:Alef.s.souza@gmail.com">Alef.s.souza@gmail.com</a>.
-      </div>
-      <div class="cookie-actions">
-        <button id="cookieDecline" class="btn btn-outline btn-sm">Recusar</button>
-        <button id="cookieAccept" class="btn btn-primary btn-sm">Aceitar</button>
-        <button id="cookieClose" class="cookie-close-btn" aria-label="Fechar">
-          <i data-lucide="x"></i>
-        </button>
+      <div class="min-w-0 flex-1">
+        <p class="text-sm text-foreground">
+          Usamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa
+          política de privacidade (LGPD).
+        </p>
+        <div class="mt-3 flex gap-2 justify-end">
+          <button onclick="dismissCookie('reject')"
+                  class="rounded-full border border-border bg-white px-4 py-1.5 text-xs font-medium hover:border-ember transition">
+            Recusar
+          </button>
+          <button onclick="dismissCookie('accept')"
+                  class="rounded-full bg-gradient-brand px-4 py-1.5 text-xs font-semibold text-white hover:brightness-110 transition">
+            Aceitar
+          </button>
+        </div>
       </div>
     </div>
   </div>
 
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      if (window.lucide) lucide.createIcons();
+  <!-- Elfsight Google Reviews -->
+  <script src="https://elfsightcdn.com/platform.js" async></script>
 
-      var cookieKey = "adv-cookie-consent";
-      var banner = document.getElementById("cookieBanner");
-      try {
-        if (!localStorage.getItem(cookieKey) && banner) banner.style.display = "block";
-      } catch (e) {}
-      function hide() { if (banner) banner.style.display = "none"; }
-      function consent(v) { try { localStorage.setItem(cookieKey, v ? "accepted" : "declined"); } catch(e){} hide(); }
-      var a = document.getElementById("cookieAccept");
-      var d = document.getElementById("cookieDecline");
-      var c = document.getElementById("cookieClose");
-      if (a) a.addEventListener("click", function(){ consent(true); });
-      if (d) d.addEventListener("click", function(){ consent(false); });
-      if (c) c.addEventListener("click", function(){ consent(false); });
-    });
+  <script>
+    const WHATSAPP = "5519993459229";
+
+    const services = {
+      "portao-deslizante": "Portão Deslizante",
+      "portao-basculante": "Portão Basculante",
+      "portao-pivotante": "Portão Pivotante",
+      "motor-ppa": "Motores PPA",
+      "carregador-ve": "Carregador Veicular",
+    };
+
+    function waLink(msg) {
+      return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
+    }
+
+    function scrollToContact(serviceId) {
+      document.getElementById("service-select").value = serviceId;
+      updateService();
+      document.getElementById("contato").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function updateService() {
+      const select = document.getElementById("service-select");
+      const serviceId = select.value;
+      const serviceName = services[serviceId];
+      const msg = "Olá! Gostaria de um orçamento para: " + serviceName + ".";
+      document.getElementById("wa-link").href = waLink(msg);
+      document.getElementById("wa-text").textContent = "WhatsApp — " + serviceName;
+    }
+
+    function dismissCookie(v) {
+      localStorage.setItem("adv_cookie_consent", v);
+      document.getElementById("cookie-banner").style.display = "none";
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    if (!localStorage.getItem("adv_cookie_consent")) {
+      document.getElementById("cookie-banner").style.display = "block";
+    }
   </script>
 </body>
 </html>
