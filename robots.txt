@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://adveletrica.com.br/sitemap.xml

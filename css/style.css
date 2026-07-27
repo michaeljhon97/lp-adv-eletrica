@@ -86,6 +86,27 @@ img{max-width:100%;height:auto}
 .btn-full{width:100%}
 .btn-sm{padding:.5rem 1rem;font-size:.8125rem}
 
+.btn-whatsapp{
+  background:var(--whatsapp);color:#fff;
+  box-shadow:0 10px 25px rgba(37,211,102,.3);
+  position:relative;overflow:hidden;
+  animation:btn-glow 2.5s ease-in-out infinite;
+}
+.btn-whatsapp:hover{filter:brightness(1.1);animation-play-state:paused}
+.btn-whatsapp::after{
+  content:'';position:absolute;top:-50%;left:-60%;width:40%;height:200%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);
+  transform:skewX(-20deg);animation:btn-shine 3s ease-in-out infinite;
+}
+@keyframes btn-glow{
+  0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.4),0 10px 25px rgba(37,211,102,.3)}
+  50%{box-shadow:0 0 0 8px rgba(37,211,102,0),0 10px 25px rgba(37,211,102,.3)}
+}
+@keyframes btn-shine{
+  0%{left:-60%}
+  30%,100%{left:120%}
+}
+
 /* ===== HEADER ===== */
 .site-header{
   position:sticky;top:0;z-index:50;
@@ -360,9 +381,15 @@ img{max-width:100%;height:auto}
   box-shadow:0 15px 30px rgba(0,0,0,.3);
   outline:4px solid rgba(255,255,255,.4);
   transition:transform .2s;
+  animation:wa-pulse 2s ease-in-out infinite;
 }
-.fab-whatsapp svg{width:28px;height:28px}
-.fab-whatsapp:hover{transform:scale(1.1)}
+.fab-whatsapp svg{width:28px;height:28px;pointer-events:none}
+.fab-whatsapp:hover{transform:scale(1.1);animation-play-state:paused}
+
+@keyframes wa-pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.6),0 15px 30px rgba(0,0,0,.3)}
+  50%{box-shadow:0 0 0 14px rgba(37,211,102,0),0 15px 30px rgba(0,0,0,.3)}
+}
 
 /* ===== HIDE WIDGETS PROBLEMATICOS ===== */
 .sk-instagram-feed .sk-credit,
