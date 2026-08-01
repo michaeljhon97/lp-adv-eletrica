@@ -73,6 +73,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function consent(accepted) {
     try { localStorage.setItem(cookieKey, accepted ? "accepted" : "declined"); } catch (e) { /* ignore */ }
+    if (typeof gtag === "function") {
+      gtag('consent', 'update', {
+        'ad_storage': accepted ? 'granted' : 'denied',
+        'ad_user_data': accepted ? 'granted' : 'denied',
+        'ad_personalization': accepted ? 'granted' : 'denied',
+        'analytics_storage': accepted ? 'granted' : 'denied'
+      });
+    }
     hideBanner();
   }
 
