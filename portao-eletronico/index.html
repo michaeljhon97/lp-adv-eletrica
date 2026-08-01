@@ -32,6 +32,32 @@
     gtag('js', new Date());
     gtag('config', 'AW-17089727826');
   </script>
+  <!-- Event snippet for BotaoWhatsapp conversion page -->
+  <script>
+    function gtag_report_conversion(url, target) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      if (typeof gtag === 'function') {
+        if (target === '_blank') {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-17089727826/WwUyCNKzq9ocENKagtU_'
+          });
+          return true;
+        } else {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-17089727826/WwUyCNKzq9ocENKagtU_',
+            'event_callback': callback
+          });
+          setTimeout(callback, 1000);
+          return false;
+        }
+      }
+      return true;
+    }
+  </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ADV Elétrica — Portões e Carregadores Veiculares</title>
@@ -260,7 +286,7 @@
         <a href="#avaliacoes" class="hover:text-ember transition-colors">Avaliações</a>
         <a href="#contato" class="hover:text-ember transition-colors">Contato</a>
       </nav>
-      <a href="https://wa.me/5519993459229?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noreferrer"
+      <a href="https://wa.me/5519993459229?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noreferrer" onclick="return gtag_report_conversion(this.href, this.target);"
          class="hidden md:inline-flex items-center gap-2 rounded-full bg-gradient-brand px-5 py-2 text-sm font-semibold text-white shadow-[var(--shadow-ember)] hover:brightness-110 transition">
         Orçamento
         <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -292,7 +318,7 @@
       </p>
 
       <div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a href="https://wa.me/5519993459229?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noreferrer"
+        <a href="https://wa.me/5519993459229?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noreferrer" onclick="return gtag_report_conversion(this.href, this.target);"
            class="btn-whatsapp inline-flex items-center gap-2.5 rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-[var(--shadow-ember)] hover:brightness-110 transition w-full sm:w-auto justify-center">
           <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
           Peça um Orçamento
@@ -494,7 +520,7 @@
 
       <div class="mt-6 flex flex-col gap-3">
         <a id="wa-link" href="https://wa.me/5519993459229?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%3A%20Port%C3%A3o%20Deslizante."
-           target="_blank" rel="noreferrer"
+           target="_blank" rel="noreferrer" onclick="return gtag_report_conversion(this.href, this.target);"
            class="inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-brand px-7 py-3.5 text-sm font-semibold text-white shadow-[var(--shadow-ember)] hover:brightness-110 transition">
           <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
           <span id="wa-text">WhatsApp — Portão Deslizante</span>
@@ -528,7 +554,7 @@
 
   <!-- FLOATING WHATSAPP -->
   <a href="https://wa.me/5519993459229?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento."
-     target="_blank" rel="noreferrer" aria-label="Fale no WhatsApp"
+     target="_blank" rel="noreferrer" onclick="return gtag_report_conversion(this.href, this.target);" aria-label="Fale no WhatsApp"
      class="fixed bottom-6 right-6 z-50 grid h-14 w-14 place-items-center rounded-full bg-whatsapp text-white shadow-xl ring-4 ring-white transition hover:scale-110">
     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
   </a>
