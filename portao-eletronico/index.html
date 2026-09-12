@@ -235,7 +235,16 @@
       transform: scale(1.05);
     }
 
+
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
     [x-cloak] { display: none !important; }
+
   </style>
   <script type="application/ld+json">
   {
@@ -470,6 +479,65 @@
     </div>
   </section>
 
+
+  <!-- VÍDEOS NA PRÁTICA -->
+  <section id="portfolio" class="bg-white pb-24 pt-12">
+    <div class="mx-auto max-w-6xl px-5">
+      <div class="text-center max-w-2xl mx-auto">
+        <div class="section-tag">Na Prática</div>
+        <h2 class="mt-3 font-display font-bold text-3xl md:text-4xl">
+          Instalação e Manutenção em <span class="text-gradient">Ação</span>
+        </h2>
+        <p class="mt-4 text-muted-foreground">
+          Acompanhe nossos trabalhos mais recentes no formato mobile.
+        </p>
+      </div>
+
+      <div class="mt-10 w-full">
+        <!-- Horizontal scroll container -->
+        <div class="flex overflow-x-auto snap-x snap-mandatory gap-5 pb-8 hide-scrollbar px-4 sm:px-0">
+          
+          <div class="snap-center shrink-0 w-[85vw] sm:w-[280px] h-[65vh] sm:h-[500px] rounded-2xl overflow-hidden relative shadow-[var(--shadow-ember)] border border-border">
+            <video autoplay loop muted playsinline class="speed-video w-full h-full object-cover">
+              <source src="assets/videos/WhatsApp Video 2026-09-03 at 11.52.04.mp4" type="video/mp4">
+            </video>
+          </div>
+          
+          <div class="snap-center shrink-0 w-[85vw] sm:w-[280px] h-[65vh] sm:h-[500px] rounded-2xl overflow-hidden relative shadow-[var(--shadow-ember)] border border-border">
+            <video autoplay loop muted playsinline class="speed-video w-full h-full object-cover">
+              <source src="assets/videos/WhatsApp Video 2026-09-03 at 11.52.17.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="snap-center shrink-0 w-[85vw] sm:w-[280px] h-[65vh] sm:h-[500px] rounded-2xl overflow-hidden relative shadow-[var(--shadow-ember)] border border-border">
+            <video autoplay loop muted playsinline class="speed-video w-full h-full object-cover">
+              <source src="assets/videos/WhatsApp Video 2026-09-03 at 11.52.24.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="snap-center shrink-0 w-[85vw] sm:w-[280px] h-[65vh] sm:h-[500px] rounded-2xl overflow-hidden relative shadow-[var(--shadow-ember)] border border-border">
+            <video autoplay loop muted playsinline class="speed-video w-full h-full object-cover">
+              <source src="assets/videos/WhatsApp Video 2026-09-03 at 11.52.46.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="snap-center shrink-0 w-[85vw] sm:w-[280px] h-[65vh] sm:h-[500px] rounded-2xl overflow-hidden relative shadow-[var(--shadow-ember)] border border-border">
+            <video autoplay loop muted playsinline class="speed-video w-full h-full object-cover">
+              <source src="assets/videos/WhatsApp Video 2026-09-03 at 11.53.55.mp4" type="video/mp4">
+            </video>
+          </div>
+          
+          <div class="snap-center shrink-0 w-[85vw] sm:w-[280px] h-[65vh] sm:h-[500px] rounded-2xl overflow-hidden relative shadow-[var(--shadow-ember)] border border-border">
+            <video autoplay loop muted playsinline class="speed-video w-full h-full object-cover">
+              <source src="assets/videos/video_header.mp4" type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- POR QUE ESCOLHER -->
   <section id="porque" class="bg-cream py-24">
     <div class="mx-auto max-w-6xl px-5 grid md:grid-cols-2 gap-12 items-start">
@@ -676,5 +744,17 @@
       document.getElementById("cookie-banner").style.display = "block";
     }
   </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const videos = document.querySelectorAll('.speed-video');
+      videos.forEach(v => {
+        v.playbackRate = 1.6; // Speed up videos to 1.6x
+        // Safari/iOS strict autoplay rules workaround
+        v.play().catch(e => console.log('Autoplay blocked:', e));
+      });
+    });
+  </script>
 </body>
+
 </html>
